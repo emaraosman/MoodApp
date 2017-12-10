@@ -16,8 +16,17 @@ ActiveRecord::Schema.define(version: 20171210220156) do
   enable_extension "plpgsql"
 
   create_table "statistics", force: :cascade do |t|
+    t.integer "sleep"
+    t.integer "happiness"
+    t.integer "energy"
+    t.integer "stress"
+    t.integer "optimism"
+    t.text "wins"
+    t.text "losses"
+    t.bigint "user_id_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id_id"], name: "index_statistics_on_user_id_id"
   end
 
   create_table "users", force: :cascade do |t|
