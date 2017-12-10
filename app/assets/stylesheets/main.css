@@ -1,0 +1,39 @@
+
+.errors {
+  border: 1px solid red;
+  background: pink;
+  padding: 5px;
+}
+
+.notice {
+  border: 1px solid green;
+  background: lightgreen;
+  padding: 5px;
+}
+/*
+body {
+  font-family: sans-serif;
+  background: ghostwhite;
+  padding: 100px 20px;
+}
+
+.header {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 80px;
+  font-size: 48px;
+  text-align: center;
+  color: lightgreen;
+  text-shadow: 0 0 20px black;
+}
+
+.footer {
+  box-shadow: 0 0 40px darkred;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 200px;
+}*/
