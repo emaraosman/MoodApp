@@ -1,0 +1,11 @@
+<h2>Index Page</h2>
+
+
+
+
+  <ul>
+    <% @statistic.each do |statistic| %>
+      <p> <%= statistic.sleep %> </p>
+      <li><%= link_to statistic.user_id, statistic_path(statistic) %></li>
+    <% end %>
+  </ul>

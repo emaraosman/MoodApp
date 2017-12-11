@@ -8,7 +8,7 @@ class CreateStatistics < ActiveRecord::Migration[5.1]
       t.integer :optimism
       t.text :wins
       t.text :losses
-      t.belongs_to :user_id, index: true
+      t.belongs_to :user, index: true
       t.timestamps
     end
   end

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'sessions#new'
   resources :users, only: [:new, :create, :show] #:index, DO WE WANT TO SHOW EACHOTHERS MOODS?
   resource :session, only: [:new, :create, :destroy]
+  resources :statistics
 end
