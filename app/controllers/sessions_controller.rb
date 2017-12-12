@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if user
       sign_in(user)
       # flash[:notice] = "Welcome, #{username}"
-      redirect_to user_path(current_user)
+      redirect_to user_statistics_path(user)
     else
       flash[:error] = "User does not exist"
       @user = User.new(username: username)

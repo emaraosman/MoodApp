@@ -1,0 +1,17 @@
+<h2>Update Disposition</h2>
+
+<%= form_for [@user, @statistic] do |form| %>
+
+  <%= label_tag :sleep %>
+
+  <b><%= @monster.name %></b>
+  <br>
+  <%= label_tag :happiness %>
+  <br>
+  <%= form.text_area :wins, placeholder: 'Wins' %>
+  <%= form.text_area :wins, placeholder: 'Losses' %>
+
+
+  <br>
+  <%= submit_tag 'Submit' %>
+<% end %>

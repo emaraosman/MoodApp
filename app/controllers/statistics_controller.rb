@@ -1,14 +1,15 @@
 class StatisticsController < ApplicationController
 
   before_action :ensure_signed_in
-  before_action :load_statistics, only: [:index, :show, :edit, :update, :destroy]
+  before_action :load_statistics, only: [:index, :show, :edit, :update, :destroy, :new]
 
   def new
     @statistic = Statistic.new
+    @user = current_user
   end
 
   def index
-    @statistic = Statistic.find_by(user_id: params[:id])
+    @statistic = Statistic.where(user_id: params[:user_id])
   end
 
   def create
@@ -17,7 +18,7 @@ class StatisticsController < ApplicationController
 
     if @statistic.save
       flash[:notice] = 'Stats recorded!'
-      redirect_to statistics_path(@statistic)
+      redirect_to user_statistics_path
     else
       flash[:error] = @statistic.errors.full_messages.join(', ')
       render :new
@@ -39,7 +40,7 @@ class StatisticsController < ApplicationController
 
 
   def show
-    @statistic = Statistic.find_by(user_id: params[:id])
+    @statistic = Statistic.find_by(id: params[:id])
   end
 
   def destroy
@@ -52,7 +53,7 @@ class StatisticsController < ApplicationController
   private
 
   def create_params
-    params.require(:user_id).permit(:wins, :loss)
+    params.require(:statistic).permit(:sleep, :happiness, :energy, :stress, :optimism, :wins, :losses)
   end
 
   def update_params

@@ -1,0 +1,17 @@
+<button><%= link_to "Back", user_statistics_path(current_user) %></button>
+
+<h2>New disposition page</h2>
+
+<%= form_for [@user, @statistic] do |form| %>
+  <div>Sleep: <br><%= form.number_field(:sleep, in: 0..24.0, step: 1, placeholder:0) %></div>
+  <div>Happiness: <br><%= form.number_field(:happiness, in: 0..10.0, step: 1, placeholder:0) %></div>
+  <div>Energy: <br><%= form.number_field(:energy, in: 0..10.0, step: 1, placeholder:0) %></div>
+  <div>Stress: <br><%= form.number_field(:stress, in: 0..10.0, step: 1, placeholder:0) %></div>
+  <div>Optimism:<br> <%= form.number_field(:optimism, in: 0..10.0, step: 1, placeholder:0) %></div>
+  <br>
+  <%= form.text_area :wins, placeholder: 'Wins' %>
+  <%= form.text_area :losses, placeholder: 'Losses' %>
+
+  <br>
+  <%= submit_tag 'Submit' %>
+<% end %>

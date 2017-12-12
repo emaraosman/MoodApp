@@ -1,11 +1,15 @@
 <h2>Index Page</h2>
 
+<div class="index-button"><%= link_to "create new disposition", new_user_statistic_path %></div>
 
+  <% @statistic.each do |item| %>
+    <div class="indexes">
+      <div class="index-preview">
+        <p> Disposition <%= item[:id] %> </p>
+        <p> <%= item[:created_at] %> </p>
+      </div>
 
+      <div class="index-button"><%= link_to "view", user_statistic_path(item[:user_id],item[:id]) %></div>
 
-  <ul>
-    <% @statistic.each do |statistic| %>
-      <p> <%= statistic.sleep %> </p>
-      <li><%= link_to statistic.user_id, statistic_path(statistic) %></li>
-    <% end %>
-  </ul>
+    </div>
+  <% end %>

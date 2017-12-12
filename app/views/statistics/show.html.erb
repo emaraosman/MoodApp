@@ -1,5 +1,11 @@
-<h1>show single stat <%= @statistic %> </h1>
-<% @statistic.each do |statistic| %>
-  <p> <%= statistic.sleep %> </p>
-  <li><%= link_to statistic.user_id, statistic_path(statistic) %></li>
-<% end %>
+<h1> Disposition: <%= @statistic.id %> </h1>
+  <h2><%= @statistic.created_at %></h2>
+  <p> Sleep: <%= @statistic.sleep %> </p>
+  <p> Happiness: <%= @statistic.happiness %> </p>
+  <p> Energy: <%= @statistic.energy %> </p>
+  <p> Stress: <%= @statistic.stress %> </p>
+  <p> Optimism: <%= @statistic.optimism %> </p>
+  <p> Wins: <%= @statistic.wins %> </p>
+  <p> Losses: <%= @statistic.losses %> </p>
+
+  <div class="index-button"><%= link_to "Update", edit_user_statistic_path(@statistic.id) %></div>
